@@ -8,4 +8,12 @@ before_install:
   fi
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
+# Here we use the decrypted service account credentials to authenticate the command line tool
 - gcloud auth activate-service-account --key-file client-secret.json
+install:
+- yarn install -g ghost-cli@latest
+- ghost install
+deploy:
+  - provider: gae
+    keyfile: "client-secret.json"
+    project: "hellojcc-178809"
