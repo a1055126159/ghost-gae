@@ -1,0 +1,8 @@
+runtime: nodejs
+env: flex
+beta_settings:
+  # The connection name of your instance on its Overview page in the Google
+  # Cloud Platform Console, or use `YOUR_PROJECT_ID:YOUR_REGION:YOUR_INSTANCE_NAME`
+  cloud_sql_instances: 'hellojcc-178809:asia-east1:hellojcc'
+health_check:
+  enable_health_check: false

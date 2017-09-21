@@ -1,0 +1,16 @@
+{
+  "name": "ghost-gae",
+  "version": "0.0.0",
+  "description": "Deploy ghost on Goolge Cloud Platform App Engine",
+  "main": "./current/core/index",
+  "scripts": {
+    "prestart": "./symlink.sh",
+    "start": "node current/index"
+  },
+  "engines": {
+    "node": "^4.5.0 || ^6.9.0"
+  },
+  "repository": "git@github.com:ddhp/ghost-gae.git",
+  "author": "ddhp",
+  "license": "MIT"
+}
