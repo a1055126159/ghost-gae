@@ -1,17 +1,28 @@
 language: node_js
 node_js:
 - '6'
+# Cache our Gcloud SDK between commands
+# cache:
+#   directories:
+#   - "$HOME/google-cloud-sdk/"
+env:
+# Make sure gcloud command is on our PATH
+- PATH=$PATH:${HOME}/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before_install:
 - openssl aes-256-cbc -K $encrypted_b8ef22b72338_key -iv $encrypted_b8ef22b72338_iv
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
-- if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com | bash;
-  fi
+# - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+# - rm -rf $HOME/google-cloud-sdk
+# - curl https://sdk.cloud.google.com | bash
 - tar -xzf credentials.tar.gz
 - mkdir -p lib
-# Here we use the decrypted service account credentials to authenticate the command line tool
-- gcloud auth activate-service-account --key-file client-secret.json
+# - ls ${HOME}/google-cloud-sdk/bin
+# - which gcloud
+# - gcloud version
+# # Here we use the decrypted service account credentials to authenticate the command line tool
+# - gcloud auth activate-service-account --key-file client-secret.json
 install:
-- yarn install -g ghost-cli@latest
+- yarn global add ghost-cli@latest
 - ghost install
 deploy:
   - provider: gae
