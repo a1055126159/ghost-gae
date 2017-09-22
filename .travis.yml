@@ -33,6 +33,7 @@ install:
 # - npm root -g | xargs sudo chmod -R 755 
 # - ../node_modules/ghost-cli/bin/ghost install --no-prompt
 - ghost install --no-stack --no-setup --no-setup-linux-user
+- ls -al
 - cp ../config.*.json ./
 - cd ../
 - rm -rf node_modules/
