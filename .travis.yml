@@ -34,6 +34,9 @@ install:
 # - ../node_modules/ghost-cli/bin/ghost install --no-prompt
 - ghost install --no-stack --no-setup --no-setup-linux-user
 - cp ../config.*.json ./
+- cd ../
+- rm -rf node_modules/
+script: 
 deploy:
   - provider: gae
     keyfile: "client-secret.json"
