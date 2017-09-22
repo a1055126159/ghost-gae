@@ -1,0 +1,28 @@
+{
+  "url": "https://hellojcc-178809.appspot.com",
+  "fileStorage": false,
+  "server": {
+    "host": "0.0.0.0",
+    "port": "8080"
+  },
+  "database": {
+    "client": "mysql",
+    "connection": {
+      "socketPath": "/cloudsql/hellojcc-178809:asia-east1:hellojcc",
+      "user": "ghost",
+      "password": "066f9239afddb4cb7757",
+      "database": "ghost_production",
+      "charset": "utf8"
+    },
+    "debug": false
+  },
+  "mail": {
+    "transport": "Direct"
+  },
+  "logging": {
+    "transports": [
+      "file",
+      "stdout"
+    ]
+  }
+}
