@@ -8,6 +8,8 @@ node_js:
 env:
 # Make sure gcloud command is on our PATH
 - PATH=$PATH:${HOME}/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
+skip_files:
+- dummy
 before_install:
 - openssl aes-256-cbc -K $encrypted_b8ef22b72338_key -iv $encrypted_b8ef22b72338_iv
   -in credentials.tar.gz.enc -out credentials.tar.gz -d
@@ -32,13 +34,19 @@ install:
 # - ls -al /home/travis/.nvm/versions/node/v6.11.3/
 # - npm root -g | xargs sudo chmod -R 755 
 # - ../node_modules/ghost-cli/bin/ghost install --no-prompt
-- ghost install --no-stack --no-setup --no-setup-linux-user
+- ghost install --url=https://hellojcc-178809.appspot.com --no-prompt --no-stack --no-setup-linux-user --no-setup-mysql --no-setup-nginx --no-setup-systemd --no-setup-migrate
 - ls -al
+- ls -al current/node_modules
 - cp ../config.*.json ./
 - cd ../
-- rm -rf node_modules/
+- ls -al
 script: 
 deploy:
-  - provider: gae
-    keyfile: "client-secret.json"
-    project: "hellojcc-178809"
+  provider: gae
+  # Skip cleanup so api_key.py and vendored dependencies are still there
+  skip_cleanup: true
+  keyfile: "client-secret.json"
+  project: "hellojcc-178809"
+  default: true
+  on:
+    all_branches: true
