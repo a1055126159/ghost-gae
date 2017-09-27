@@ -10,4 +10,5 @@ ln -s $target ghost/current
 cd ghost
 ls -al
 cd current
+npm run init
 ls -al

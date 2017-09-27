@@ -4,7 +4,7 @@
   "description": "Deploy ghost on Goolge Cloud Platform App Engine",
   "main": "./current/core/index",
   "scripts": {
-    "prestart": "./symlink.sh",
+    "prestart": "./prestart.sh",
     "start": "node ghost/current/index"
   },
   "engines": {
