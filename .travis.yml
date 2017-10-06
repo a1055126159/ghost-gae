@@ -17,31 +17,31 @@ before_install:
 # - rm -rf $HOME/google-cloud-sdk
 # - curl https://sdk.cloud.google.com | bash
 - tar -xzf credentials.tar.gz
-- mkdir -p ghost
+# - mkdir -p ghost
 # - ls ${HOME}/google-cloud-sdk/bin
 # - which gcloud
 # - gcloud version
 # # Here we use the decrypted service account credentials to authenticate the command line tool
 # - gcloud auth activate-service-account --key-file client-secret.json
 install:
-# - sudo npm install -g ghost-cli@latest
-- yarn global add ghost-cli@latest
-# - yarn add ghost-cli@latest
-- cd ghost
-# - which ghost
-- whoami
-- npm root -g
-# - ls -al /home/travis/.nvm/versions/node/v6.11.3/
-# - npm root -g | xargs sudo chmod -R 755 
-# - ../node_modules/ghost-cli/bin/ghost install --no-prompt
-- ghost install --url=https://hellojcc-178809.appspot.com --no-prompt --no-stack --no-setup-linux-user --no-setup-mysql --no-setup-nginx --no-setup-systemd
-- ls -al
-- ls -al current/node_modules
-# - cp ../config.*.json ./
-- cd content/themes
-- git clone -b jcc-v2 https://github.com/ddhp/Casper.git casper-jcc
-- cd ../../../
-- ls -al
+# # - sudo npm install -g ghost-cli@latest
+# - yarn global add ghost-cli@latest
+# # - yarn add ghost-cli@latest
+# - cd ghost
+# # - which ghost
+# - whoami
+# - npm root -g
+# # - ls -al /home/travis/.nvm/versions/node/v6.11.3/
+# # - npm root -g | xargs sudo chmod -R 755 
+# # - ../node_modules/ghost-cli/bin/ghost install --no-prompt
+# - ghost install --url=https://hellojcc-178809.appspot.com --no-prompt --no-stack --no-setup-linux-user --no-setup-mysql --no-setup-nginx --no-setup-systemd
+# - ls -al
+# - ls -al current/node_modules
+# # - cp ../config.*.json ./
+# - cd content/themes
+# - git clone -b jcc-v2 https://github.com/ddhp/Casper.git casper-jcc
+# - cd ../../../
+# - ls -al
 script: 
 deploy:
   provider: gae
