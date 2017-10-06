@@ -1,7 +1,7 @@
 #!/bin/bash
 path="$(pwd)"
 echo $path
-cp config*.json ghost
+# cp config*.json ghost
 ls -al
 ls -al node_modules
 version="$(ls -t ghost/versions | head -1)"

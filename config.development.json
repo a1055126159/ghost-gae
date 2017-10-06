@@ -5,15 +5,10 @@
     "host": "127.0.0.1"
   },
   "database": {
-    "client": "mysql",
+    "client": "sqlite3",
     "connection": {
-      "host": "127.0.0.1",
-      "user": "ghost",
-      "password": "066f9239afddb4cb7757",
-      "database": "ghost_production",
-      "charset"  : "utf8"
-    },
-    "debug": true
+      "filename": "./ghost/content/data/ghost.db"
+    }
   },
   "mail": {
     "transport": "Direct"
