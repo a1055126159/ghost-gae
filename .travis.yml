@@ -38,7 +38,9 @@ install:
 - ls -al
 - ls -al current/node_modules
 - cp ../config.*.json ./
-- cd ../
+- cd content/themes
+- git clone -b jcc-v2 https://github.com/ddhp/Casper.git casper-jcc
+- cd ../../../
 - ls -al
 script: 
 deploy:
