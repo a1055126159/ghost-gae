@@ -34,10 +34,10 @@ install:
 # - ls -al /home/travis/.nvm/versions/node/v6.11.3/
 # - npm root -g | xargs sudo chmod -R 755 
 # - ../node_modules/ghost-cli/bin/ghost install --no-prompt
-- ghost install --url=https://hellojcc-178809.appspot.com --host=0.0.0.0 --db sqlite3 --dbpath ./content/data/ghost.db --no-prompt --no-stack --no-setup-linux-user --no-setup-mysql --no-setup-nginx --no-setup-systemd --no-setup-migrate
+- ghost install --url=https://hellojcc-178809.appspot.com --host=0.0.0.0 --db sqlite3 --dbpath ./content/data/ghost.db --no-prompt --no-stack --no-setup-linux-user --no-setup-mysql --no-setup-nginx --no-setup-systemd
 - ls -al
 - ls -al current/node_modules
-- cp ../config.*.json ./
+# - cp ../config.*.json ./
 - cd content/themes
 - git clone -b jcc-v2 https://github.com/ddhp/Casper.git casper-jcc
 - cd ../../../
