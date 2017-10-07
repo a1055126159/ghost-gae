@@ -9,6 +9,8 @@ ghost install --url=https://hellojcc-178809.appspot.com --db=sqlite3 --dbpath=./
 # echo $path
 cp ../config*.json ./
 ghost setup migrate
+cd content/themes
+git clone -b jcc-v2 https://github.com/ddhp/Casper.git casper-jcc
 # ls -al
 # ls -al node_modules
 # version="$(ls -t ghost/versions | head -1)"
