@@ -1,6 +1,7 @@
 #!/bin/bash
 path="$(pwd)"
 yarn global add ghost-cli@latest
+yarn global add knex-migrator
 mkdir ghost
 cd ghost
 # ghost install --url=https://hellojcc-178809.appspot.com --no-prompt --no-stack --no-setup-linux-user --no-setup-mysql --no-setup-nginx --no-setup-systemd
