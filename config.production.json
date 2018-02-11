@@ -1,20 +1,15 @@
 {
-  "url": "https://hellojcc-178809.appspot.com",
+  "url": "https://blog.natureos.tk",
   "fileStorage": false,
   "server": {
     "host": "0.0.0.0",
     "port": "8080"
   },
   "database": {
-    "client": "mysql",
+    "client": "sqlite3",
     "connection": {
-      "socketPath": "/cloudsql/hellojcc-178809:asia-east1:hellojcc",
-      "user": "ghost",
-      "password": "066f9239afddb4cb7757",
-      "database": "ghost_production",
-      "charset": "utf8"
+      "filename": "./ghost/content/data/ghost.db"
     },
-    "debug": false
   },
   "mail": {
     "transport": "Direct"
